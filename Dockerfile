@@ -47,6 +47,12 @@ RUN rm -rf wkhtmltox
 RUN rm -f wkhtmltox-0.12.4_linux-generic-amd64.ta
 RUN yum install libXrender fontconfig urw-fonts libXext -y
 
+# Start bash
+
+ADD start.sh /start.sh
+
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD bash /start.sh && tail -f /dev/null
+
+#CMD ["php-fpm", "-D", nginx", "-g", "daemon off;"]
