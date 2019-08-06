@@ -10,8 +10,6 @@ RUN yum-config-manager --enable remi-php71
 RUN yum install php php-common php-opcache php-mcrypt php-cli php-gd php-curl php-mysql php-mbstring php-pecl-zip php-imap php-fpm -y
 
 RUN mkdir /run/php-fpm
-# Reload php-fpm
-RUN php-fpm -F -R
 # Install Nginx
 
 RUN yum install nginx -y
