@@ -47,6 +47,14 @@ RUN rm -rf wkhtmltox
 RUN rm -f wkhtmltox-0.12.4_linux-generic-amd64.ta
 RUN yum install libXrender fontconfig urw-fonts libXext -y
 
+# Install nodejs
+RUN curl --silent --location https://rpm.nodesource.com/setup_10.x | bash -
+RUN yum install -y nodejs
+npm install -g gulp-cli bower bower-npm-resolver
+
+# Install php redis
+RUN yum install redis php-pecl-redis -y
+
 # Start bash
 
 ADD start.sh /start.sh
