@@ -50,7 +50,7 @@ RUN yum install libXrender fontconfig urw-fonts libXext -y
 # Install nodejs
 RUN curl --silent --location https://rpm.nodesource.com/setup_10.x | bash -
 RUN yum install -y nodejs
-npm install -g gulp-cli bower bower-npm-resolver
+RUN npm install -g gulp-cli bower bower-npm-resolver
 
 # Install php redis
 RUN yum install redis php-pecl-redis -y
