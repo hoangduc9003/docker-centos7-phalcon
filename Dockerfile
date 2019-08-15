@@ -7,7 +7,7 @@ ENV PHALCON_VERSION=3.4.0
 RUN yum install epel-release -y
 RUN yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
 RUN yum-config-manager --enable remi-php71
-RUN yum install php php-common php-opcache php-mcrypt php-cli php-gd php-curl php-mysql php-mbstring php-pecl-zip php-imap php-fpm -y
+RUN yum install php php-common php-opcache php-mcrypt php-cli php-gd php-curl php-mysql php-mbstring php-pecl-zip php-imap php-fpm php-intl -y
 
 RUN mkdir /run/php-fpm
 # Install Nginx
@@ -44,7 +44,7 @@ RUN unxz wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
 RUN tar -xvf wkhtmltox-0.12.4_linux-generic-amd64.tar
 RUN mv wkhtmltox/bin/* /usr/local/bin/
 RUN rm -rf wkhtmltox
-RUN rm -f wkhtmltox-0.12.4_linux-generic-amd64.ta
+RUN rm -f wkhtmltox-0.12.4_linux-generic-amd64.tar
 RUN yum install libXrender fontconfig urw-fonts libXext -y
 
 # Install nodejs
