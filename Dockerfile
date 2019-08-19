@@ -55,6 +55,11 @@ RUN npm install -g gulp-cli bower bower-npm-resolver
 # Install php redis
 RUN yum install redis php-pecl-redis -y
 
+# Install Phalcon development tool
+RUN yum install -y git
+RUN git clone git://github.com/phalcon/phalcon-devtools.git
+RUN ln -s /phalcon-devtools/phalcon /usr/bin/phalcon
+
 # Start bash
 
 ADD start.sh /start.sh
